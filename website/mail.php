@@ -14,11 +14,17 @@ if(isset($_POST['mail'])){
     $email_to = "fmholz@gmail.com";
     $email_subject = "APP Kontakt Form";      
 
-    $first_name = $_POST['naam']; // required
-    $email_from = $_POST['mail']; // required
-    $telephone = $_POST['telefoon']; // not required
-	  $subject	= $_POST['onderwerp']; // not required
-    $comments = $_POST['bericht']; // required
+    $name 	= $_POST['name']; // required
+    $first_name = $_POST['surname']; // required
+    $unit 	= $_POST['unit']; // required
+    $kdn 	= $_POST['kdn']; // required
+    $email_from = $_POST['email']; // required
+    $telephone 	= $_POST['tel']; // not required
+    $device 	= $_POST['device']; // required
+    $sn		= $_POST['sn']; // required
+    $errmesg	= $_POST['error']; // not required
+
+
 
     function clean_string($string) {
       $bad = array("content-type","bcc:","to:","cc:","href");
@@ -30,12 +36,16 @@ if(isset($_POST['mail'])){
 	$email_message = "===================================================\n";
 	$email_message .= "Mobile contact form " . $_SERVER['HTTP_HOST'] . "\n";
 	$email_message .= "===================================================\n\n";
-    $email_message .= "Name: ".clean_string($first_name)."\n";
-    $email_message .= "E-mail: ".clean_string($email_from)."\n";
-    $email_message .= "Tel: ".clean_string($telephone)."\n";
-	  $email_message .= "Subject: ".clean_string($subject)."\n";
-    $email_message .= "Message: ".clean_string($comments)."\n\n";
-    $email_message .= "Send on " . $datum . " from IP address " . $_SERVER['REMOTE_ADDR'] . "\n\n";
+    	$email_message .= "Name: ".clean_string($name)."\n";
+    	$email_message .= "Vorname: ".clean_string($first_name)."\n";
+    	$email_message .= "Abteilung: ".clean_string($unit)."\n";
+    	$email_message .= "Kundennummer: ".clean_string($kdn)."\n";
+    	$email_message .= "Emailadresse: ".clean_string($email_from)."\n";
+    	$email_message .= "Telefonnummer: ".clean_string($telephone)."\n";
+    	$email_message .= "Gerät: ".clean_string($device)."\n";
+    	$email_message .= "Seriennummer: ".clean_string($sn)."\n";
+    	$email_message .= "Fehlerbeschreibung: ".clean_string($errmesg)."\n\n";
+    	$email_message .= "Send on " . $datum . "\n\n";
 	$email_message .= "===================================================\n";
 	$email_message .= "Tech support:\n";
 	$email_message .= "===================================================\n\n";
