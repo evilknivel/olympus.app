@@ -1,14 +1,5 @@
 <?php
 session_start();
-if(isset($_POST['mail'])){
-    // antiflood controle
-    if (!empty($_SESSION['antiflood']))
-    {
-        $seconde = 20; // 20 seconds anti-flooding
-        $tijd = time() - $_SESSION['antiflood'];
-        if($tijd < $seconde)
-            $antiflood = 1;
-    }
 
     // EDIT THE 2 LINES BELOW AS REQUIRED
     $email_to = "fmholz@gmail.com";
@@ -26,10 +17,10 @@ if(isset($_POST['mail'])){
 
 
 
-    function clean_string($string) {
+      function clean_string($string) {
       $bad = array("content-type","bcc:","to:","cc:","href");
       return str_replace($bad,"",$string);
-    }
+      }
 
 	$datum = date('d/m/Y H:i:s');
 
@@ -55,10 +46,8 @@ if(isset($_POST['mail'])){
 $headers = 'From: '.$email_from."\r\n".
 'Reply-To: '.$email_from."\r\n" .
 'X-Mailer: PHP/' . phpversion();
- if (($antiflood == "")) 
-  {
-	$_SESSION['antiflood'] = time();
-	  @mail($email_to, $email_subject, $email_message, $headers);
-	  
-	}
+
+	mail($email_to, $email_subject, $email_message, $headers);
+	header("Location: index.html#succes");
+
 ?>
