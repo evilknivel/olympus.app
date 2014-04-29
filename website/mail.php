@@ -25,7 +25,7 @@ session_start();
 	$datum = date('d/m/Y H:i:s');
 
 	$email_message = "===================================================\n";
-	$email_message .= "Mobile contact form " . $_SERVER['HTTP_HOST'] . "\n";
+	$email_message .= "Mailanfrage über Olympus Medical Service APP\n";
 	$email_message .= "===================================================\n\n";
     	$email_message .= "Name: ".clean_string($name)."\n";
     	$email_message .= "Vorname: ".clean_string($first_name)."\n";
