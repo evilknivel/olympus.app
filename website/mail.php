@@ -22,7 +22,7 @@ session_start();
       return str_replace($bad,"",$string);
       }
 
-	$datum = date('d/m/Y H:i:s');
+	$datum = date('d.m.Y H:i:s');
 
 	$email_message = "===================================================\n";
 	$email_message .= "Mailanfrage über Olympus Medical Service APP\n";
@@ -36,7 +36,7 @@ session_start();
     	$email_message .= "Gerät: ".clean_string($device)."\n";
     	$email_message .= "Seriennummer: ".clean_string($sn)."\n";
     	$email_message .= "Fehlerbeschreibung: ".clean_string($errmesg)."\n\n";
-    	$email_message .= "Send on " . $datum . "\n\n";
+    	$email_message .= "gesendet " . $datum . "\n\n";
 	$email_message .= "===================================================\n";
 	$email_message .= "Tech support:\n";
 	$email_message .= "===================================================\n\n";
