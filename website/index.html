@@ -9,6 +9,12 @@
       <link rel="stylesheet" href="jquery.mobile.structure-1.4.2.min.css" />
       <script src="jquery-1.10.2.min.js"></script>
       <script src="jquery.mobile-1.4.2.min.js"></script>
+      <script src="de.js"></script>
+	<script src="parsley.js"></script>
+	<script type="text/javascript">
+  window.ParsleyValidator.setLocale('de');
+</script>
+
       
       <style>
         .header_center {  
@@ -95,11 +101,11 @@
 <div class="ui-body-d ui-content" id="kontakt" data-theme="b">
     <h1>Kontakt</h1>
     
-    		<form method="post" action="http://olympus.kurzwelle.org/mail.php" data-ajax="false">
+    		<form id="form" method="post" action="http://olympus.kurzwelle.org/mail.php" data-ajax="false">
     		<fieldset>
     		<div data-role="fieldcontain">
 	         <label for="name">Name:</label>
-	         <input type="text" name="name" id="name" value="" />
+	         <input type="text" name="name" id="name" value="" required />
 			</div>
 			
 			<div data-role="fieldcontain">
@@ -119,12 +125,12 @@
 
 			<div data-role="fieldcontain">
 	         <label for="email">Email - Adresse:</label>
-	         <input type="email" name="email" id="email" placeholder="max@mustermann.de" />
+	         <input type="email" name="email" id="email" placeholder="max@mustermann.de" required />
 			</div>
 			
 			<div data-role="fieldcontain">
 	         <label for="tel">Telefonnummer:</label>
-	         <input type="tel" name="tel" id="tel" placeholder="040237730" />
+	         <input type="tel" name="tel" id="tel" placeholder="040237730" required />
 			</div>
 			
 			<div data-role="fieldcontain">
@@ -139,13 +145,16 @@
 			
 			<div data-role="fieldcontain">
 			 <label for="error">Fehlerbeschreibung:</label>
-             <textarea name="error" id="error">
+             <textarea name="error" id="error" required>
              </textarea>
             </div>
             
             <input type="submit" class="btn" data-theme="a" name="submit" id="submit" value="Submit">
             </fieldset>
             </form>
+<script type="text/javascript">
+  $('#form').parsley();
+</script>
 
 
 			
