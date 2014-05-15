@@ -7,15 +7,8 @@
       <link rel="stylesheet" href="themes/olympus.min.css" />
       <link rel="stylesheet" href="themes/jquery.mobile.icons.min.css" />
       <link rel="stylesheet" href="jquery.mobile.structure-1.4.2.min.css" />
-      <link rel="stylesheet" href="parsley.css" />
       <script src="jquery-1.10.2.min.js"></script>
       <script src="jquery.mobile-1.4.2.min.js"></script>
-      <script src="de.js"></script>
-	<script src="parsley.min.js"></script>
-	<script type="text/javascript">
-  window.ParsleyValidator.setLocale('de');
-</script>
-
       
       <style>
         .header_center {  
@@ -28,35 +21,83 @@
           text-align: center; 
         }
 
-        img {
+
+       .center {  
+          text-align: center; 
+        }
+
+
+        .logo {
             
         width : 80%;
         margin : 10px 10px 10px 10px;
             
         }
 
+        .servicelogo { 
+
+          width : 80%;
+          margin : 10px 0px 30px 0px;
+
+        }
+
+        .minpic {
+            
+        max-width : 70%;
+                    
+        }        
+
+     
+        .picpopup {
+            
+        max-width : 20%;
+                    
+        }
+
+
+
+        .navbar {
+
+          margin : 0px 5px 0px 0px;
+
+        }
+
+        .servicediv {
+          
+          margin : 5px;
+
+        }
+
+        .servicepic {
+
+          max-width : 60%;
+
+        }
+
       </style>
 
-
-
-  </head>
-  <body>
+</head>
+<body>
 
 <div data-role="page" data-theme="a" id="index">
 
   <div data-role="header" class="header_center"> 
-      <img src="images/olympus_logo.png" />
-</div> 
+    <img class="logo" src="images/olympus_logo.png" />
+  </div>
 
-<div id="tabs" data-role="tabs">
-  <div data-role="navbar">
+
+ <div id="tabs" data-role="tabs">
+
+  <div data-role="navbar" class="navbar" data-iconpos="left">
     <ul>
-      <li><a href="#hotline" data-role="button" data-ajax="false">Hotline</a></li>
-      <li><a href="#team" data-role="button" data-ajax="false">Team</a></li>
-      <li><a href="#kontakt" data-role="button" data-ajax="false">Kontakt</a></li>
+      <li><a href="#hotline" data-ajax="false" data-icon="phone">Hotline</a></li>
+      <li><a href="#team" data-ajax="false" data-icon="user">Team</a></li>
+      <li><a href="#kontakt" data-ajax="false" data-icon="mail">Kontakt</a></li>
     </ul>
-  </div>  
+  </div>
 
+
+  
 <div class="ui-body-d ui-content" id="hotline">
   <h1>Hotline</h1>
   <p>Technische Hotline: <a href="tel:+49800200444294">0800 200 444 294</a>
@@ -67,119 +108,298 @@
 </div>
 
 <div class="ui-body-d ui-content" id="team">
-    	<div class="ui-corner-all custom-corners">
-  	<div class="ui-bar ui-bar-a">
-    	<h3>Kundenbetreung</h3>
-  	</div>
-  	<div class="ui-body ui-body-a">
-    	<p>Max Mustermann</p>
-    	<p>Andi Wand</p>
-  	</div>
-	</div>
-	
-	<div class="ui-corner-all custom-corners">
-  	<div class="ui-bar ui-bar-a">
-    	<h3>Technische Hotline</h3>
-  	</div>
-  	<div class="ui-body ui-body-a">
-    	<p>Max Mustermann</p>
-    	<p>Andi Wand</p>
-  	</div>
-	</div>
-	
-	<div class="ui-corner-all custom-corners">
-  	<div class="ui-bar ui-bar-a">
-    	<h3>Leihgeräteabteilung</h3>
-  	</div>
-  	<div class="ui-body ui-body-a">
-    	<p>Max Mustermann</p>
-    	<p>Andi Wand</p>
-  	</div>
-	</div>
-	
+  <div class="ui-corner-all custom-corners">
+
+    <h3>Kundenbetreung</h3>
+
+        <div class="ui-grid-a">
+      <div class="ui-block-a center">
+
+        <div><p><img class="minpic" src="images/w2.jpg" /></p>
+
+          <p><a href="#maxi" data-rel="popup" Andata-position-to="window">Maxi Mustermann</a></p>
+
+            <div data-role="popup" id="maxi">
+            
+              <a href="#" data-rel="back" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext" class="ui-btn-right">Close</a>
+              <p><img src="images/w2.jpg" class="picpopup"/>
+              Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+              </p>
+            
+            </div>
+        </div>
+      </div>
+
+      <div class="ui-block-b center">
+
+        <div><p><img class="minpic" src="images/m1.jpg" /></p>
+
+            <p><a href="#andy" data-rel="popup" Andata-position-to="window">Frank-Martin Holz</a></p>
+            <div data-role="popup" id="andy">
+              <a href="#" data-rel="back" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext" class="ui-btn-right">Close</a>
+              <p><img src="images/m1.jpg" class="picpopup" />
+              Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+              </p>
+            </div>
+        </div>    
+          </div>
+        </div><!-- /grid-a -->
+
+
+    
+  </div>
+  
+<hr>
+
+  <div class="ui-corner-all custom-corners">
+
+    <h3>Technische Hotline</h3>        
+
+
+    <div class="ui-grid-a">
+      <div class="ui-block-a center">
+
+        <div><p><img class="minpic" src="images/m2.jpg" /></p>
+
+          <p><a href="#maxi" data-rel="popup" Andata-position-to="window">Michael Matthies</a></p>
+          
+            <div data-role="popup" id="maxi">
+              <a href="#" data-rel="back" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext" class="ui-btn-right">Close</a>
+              <p><img src="images/m2.jpg" class="picpopup"/> 
+              Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+              </p>
+            </div>
+        </div>
+      </div>
+    
+      
+      <div class="ui-block-b center">
+    
+        <div><p><img class="minpic" src="images/w1.jpg" /></p>
+
+            <p><a href="#andy" data-rel="popup" Andata-position-to="window">Maxi Mustermann</p>
+              <div data-role="popup" id="andy">
+                <a href="#" data-rel="back" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext" class="ui-btn-right">Close</a>
+                <p><img src="images/w1.jpg" class="picpopup" />
+                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+                </p>
+              </div>
+        </div>    
+        
+      </div>
+      
+    </div><!-- /grid-a -->
+
+
+  </div>
+
+<hr>
+  
+  <div class="ui-corner-all custom-corners">
+
+    <h3>Leihger&auml;teabteilung</h3>        
+
+    <div class="ui-grid-a">
+      <div class="ui-block-a center">
+
+        <div><p><img class="minpic" src="images/w2.jpg" /></p>
+
+            <p><a href="#maxi" data-rel="popup" Andata-position-to="window">Maxi Mustermann</a></p>
+            
+              <div data-role="popup" id="maxi">
+                <a href="#" data-rel="back" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext" class="ui-btn-right">Close</a>
+                <p><img src="images/w2.jpg" class="picpopup"/>
+                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+                </p>
+              </div>
+        </div>
+      </div>
+
+      <div class="ui-block-b center">
+
+          <div><p><img class="minpic" src="images/m1.jpg" /></p>
+
+            <p><a href="#andy" data-rel="popup" Andata-position-to="window">Frank-Martin Holz</a></p>
+              <div data-role="popup" id="andy">
+                <a href="#" data-rel="back" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext" class="ui-btn-right">Close</a>
+                <p><img src="images/m1.jpg" class="picpopup" />
+                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+                </p>
+              </div>
+          </div>    
+          
+      </div>
+    </div><!-- /grid-a -->
+
+  </div>
+  
     </div>
 
 <div class="ui-body-d ui-content" id="kontakt" data-theme="b">
     <h1>Kontakt</h1>
     
-    		<form id="form" data-parsley-validate method="post" action="http://olympus.kurzwelle.org/mail.php" data-ajax="false">
-    		<fieldset>
-    		<div data-role="fieldcontain">
-	         <label for="name">Name:</label>
-	         <input type="text" name="name" id="name" value="" required />
-			</div>
-			
-			<div data-role="fieldcontain">
-	         <label for="surname">Vorname:</label>
-	         <input type="text" name="surname" id="surname" value="" />
-			</div>
-			
-			<div data-role="fieldcontain">
-	         <label for="unit">Abteilung:</label>
-	         <input type="text" name="unit" id="unit" placeholder="z.B. Endoskopie" />
-			</div>
+        <form method="post" action="http://olympus.kurzwelle.org/mail.php" data-ajax="false">
+        <fieldset>
+        <div data-role="fieldcontain">
+           <label for="name">Name:</label>
+           <input type="text" name="name" id="name" value="" />
+      </div>
+      
+      <div data-role="fieldcontain">
+           <label for="surname">Vorname:</label>
+           <input type="text" name="surname" id="surname" value="" />
+      </div>
+      
+      <div data-role="fieldcontain">
+           <label for="unit">Abteilung:</label>
+           <input type="text" name="unit" id="unit" placeholder="z.B. Endoskopie" />
+      </div>
 
-			<div data-role="fieldcontain">
-	         <label for="kdn">Kundenummer:</label>
-	         <input type="text" name="kdn" id="kdn" placeholder="z.B. A1M10001245" />
-			</div>
+      <div data-role="fieldcontain">
+           <label for="kdn">Kundenummer:</label>
+           <input type="text" name="kdn" id="kdn" placeholder="z.B. A1M10001245" />
+      </div>
 
-			<div data-role="fieldcontain">
-	         <label for="email">Email - Adresse:</label>
-	         <input type="email" name="email" id="email" placeholder="max@mustermann.de" data-parsley-trigger="change" required />
-			</div>
-			
-			<div data-role="fieldcontain">
-	         <label for="tel">Telefonnummer:</label>
-	         <input type="tel" name="tel" id="tel" placeholder="040237730" data-parsley-trigger="change" required />
-			</div>
-			
-			<div data-role="fieldcontain">
-	         <label for="device">Gerät:</label>
-	         <input type="text" name="device" id="device" placeholder="z.B CV-190" />
-			</div>
-			
-			<div data-role="fieldcontain">
-	         <label for="sn">Seriennummer:</label>
-	         <input type="text" name="sn" id="sn" placeholder="71547895" />
-			</div>
-			
-			<div data-role="fieldcontain">
-			 <label for="error">Fehlerbeschreibung:</label>
-             <textarea name="error" id="error" data-parsley-trigger="change" required>
+      <div data-role="fieldcontain">
+           <label for="email">Email - Adresse:</label>
+           <input type="email" name="email" id="email" placeholder="max@mustermann.de" />
+      </div>
+      
+      <div data-role="fieldcontain">
+           <label for="tel">Telefonnummer:</label>
+           <input type="tel" name="tel" id="tel" placeholder="040237730" />
+      </div>
+      
+      <div data-role="fieldcontain">
+           <label for="device">Ger&auml;t:</label>
+           <input type="text" name="device" id="device" placeholder="z.B CV-190" />
+      </div>
+      
+      <div data-role="fieldcontain">
+           <label for="sn">Seriennummer:</label>
+           <input type="text" name="sn" id="sn" placeholder="71547895" />
+      </div>
+      
+      <div data-role="fieldcontain">
+       <label for="error">Fehlerbeschreibung:</label>
+             <textarea name="error" id="error">
              </textarea>
             </div>
             
             <input type="submit" class="btn" data-theme="a" name="submit" id="submit" value="Submit">
             </fieldset>
             </form>
-<script type="text/javascript">
-  $('#form').parsley();
-</script>
 
 
-			
-  </div>
+      
+              </div>
 
-
-    </div>
-
+	</div>
+	
 <div data-role="footer" class="footer_center" data-position="fixed">
   <h4>Olympus Deutschland GmbH (c) 2014</h4>
   <a class="ui-btn ui-shadow" href="#services" data-role="button">Unsere Servicel&ouml;sungen in &Uuml;berblick</a>
   </div>
 
   
-    </div>
+    
+	</div>
 <!--/////////////////////PAGE_BREAK///////////////////////////////////////////////////////////////////////// -->
 <div data-role="page" data-theme="b" id="services">  
 
-<div data-role="header" class="header_center" data-add-back-btn="true">
+<div data-role="header" class="header_center" data-add-back-btn="true" data-position="fixed">
   <h1>Olympus Services</h1>
 </div> 
 
 <div data-role="content">
-  <p>SERVICES</p>
+  <div class="header_center"><p><img class="servicelogo" src="images/service_solutions.png"></p></div>
+
+
+
+<div class="ui-grid-a">
+  <div class="ui-block-a center">
+
+    <div class="servicediv"><p><img src="images/_MSS_box_icon_hires0005.png" class="servicepic"></p><h3>Mobiler Kundendienst</h3></div>
+
+            </div>
+
+
+  <div class="ui-block-b center">
+
+    <div class="servicediv"><p><img src="images/_MSS_box_icon_hires0003.png" class="servicepic"></p><h3>Technische Hotline</h3></div>
+
+              </div>
+
+
+
+  </div><!-- /grid-a -->
+
+
+<div class="ui-grid-a">
+          <div class="ui-block-a center">
+
+            <div class="servicediv"><p><img src="images/_MSS_box_icon_hires0008.png" class="servicepic"></p><h3>Beratung und Training</h3></div>
+
+            </div>
+
+
+          <div class="ui-block-b center">
+
+            <div class="servicediv"><p><img src="images/_MSS_box_icon_hires0001.png" class="servicepic"></p><h3>Schadensanalysen</h3></div>
+
+              </div>
+
+
+
+  </div><!-- /grid-a -->
+
+<div class="ui-grid-a">
+          <div class="ui-block-a center">
+
+            <div class="servicediv"><p><img src="images/_MSS_box_icon_hires0009.png" class="servicepic"></p><h3>Wartung und Validierung f&uuml;r Aufbereitungs- maschinen</h3></div>
+
+            </div>
+
+
+          <div class="ui-block-b center">
+
+            <div class="servicediv"><p><img src="images/_MSS_box_icon_hires0004.png" class="servicepic"></p><h3>Leihger&auml;teservice</h3></div>
+
+              </div>
+
+
+
+  </div><!-- /grid-a -->
+
+            <div class="ui-grid-a">
+
+  <div class="ui-block-a center">
+
+    <div class="servicediv"><p><img src="images/_MSS_box_icon_hires0006.png" class="servicepic"></p><h3>Fl&auml;chendeckender Reparaturservice</h3></div>
+
+            </div>
+
+
+          <div class="ui-block-b center">
+
+            <div class="servicediv"><p><img src="images/_MSS_box_icon_hires0007.png" class="servicepic"></p><h3>Budgetsicherheit</h3></div>
+
+              </div>
+
+
+
+</div><!-- /grid-a -->
+
+
+  
+
+
+
+
+
+
+
+  
 </div>
 
 <div data-role="footer" class="footer_center" data-position="fixed">
