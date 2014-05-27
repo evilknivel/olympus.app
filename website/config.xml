@@ -4,12 +4,11 @@
 <!-- config.xml reference: https://build.phonegap.com/docs/config-xml -->
 <widget xmlns     = "http://www.w3.org/ns/widgets"
         xmlns:gap = "http://phonegap.com/ns/1.0"
-        id        = "com.phonegap.hello-world"
-        version   = "1.0.0">
+        id        = "com.phonegap.olympus-service"
+        version   = "0.1.0">
 
 
-    <name>Hello World</name>
-
+    <name>Olympus Service</name>
 
     <description>
         Hello World sample application that responds to the deviceready event.
@@ -26,7 +25,7 @@
         following tag to your config.xml; you will still have the INTERNET
         permission on your app, which PhoneGap requires.
     -->
-    <preference name="permissions"                value="none"/>
+    <preference name="permissions"                value="CAMERA"/>
 
 
     <!-- Customize your app and platform with the preference element. -->
