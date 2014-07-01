@@ -6,9 +6,9 @@
     <script type="text/javascript" charset="utf-8">
     
     
-function capturePhoto() {
-    navigator.camera.getPicture(onSuccess, onFail, { quality: 50, destinationType: Camera.DestinationType.DATA_URL});
-}
+
+navigator.camera.getPicture(onSuccess, onFail, { quality: 50, destinationType: Camera.DestinationType.DATA_URL});
+
 
 function onSuccess(imageData) {
     var image = document.getElementById('myImage');
@@ -22,7 +22,7 @@ function onFail(message) {
     </script>
   </head>
   <body>
-    <button onclick="capturePhoto();">Capture Photo</button> <br>
+    <!--<button onclick="capturePhoto();">Capture Photo</button> <br>-->
     <img style="width:600px;" id="myImage" src="" />
   </body>
 </html>
