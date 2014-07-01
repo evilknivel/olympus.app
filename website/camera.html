@@ -1,32 +1,38 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>Capture Photo</title>
-
-<script type="text/javascript" charset="utf-8">
-    
-
-function capturePhoto() {
-navigator.camera.getPicture(onSuccess, onFail, { quality: 50, destinationType: Camera.DestinationType.DATA_URL});
-
-
-function onSuccess(imageData) {
-    var image = document.getElementById('myImage');
-    image.src = "data:image/jpeg;base64," + imageData;
-}
-
-function onFail(message) {
-    alert('Failed because: ' + message);
-}
-
-}
-
-</script>
-    
-    
-  </head>
-  <body>
-    <button onclick="capturePhoto();">Capture Photo</button> <br>
-    <img style="width:600px;" id="myImage" src="" />
-  </body>
+<!DOCTYPE HTML>
+<html><head><title>Camera</title></head>
+<body>
+    <!---------------------------------- Camera ------------------------------------------>
+    <div data-role="page" id="cameraMainPage" data-add-back-btn="true" back-btn-text="back">
+        <div data-role="header">
+            <h1>Camera</h1>
+        </div>
+        <div data-role="content">
+            <ul data-role="listview" data-inset="true">
+                <li><a href="#" id="capturePhoneButton">Capture Photo</a></li>
+                <li><a href="#" id="fromPhotoLibraryButton">From Photo Library</a></li>
+            </ul>
+            
+            <div class="mesgBox">
+                <h5 class="hlabel">Using camera.getPicture method</h5>
+                <ul class="smFont">
+                    <li>For both of the above menu items, URI is used to retrieve the image.<br/>
+                        Along with each image, the corresponding URI is shown.
+                    </li>
+                </ul>           
+            </div>
+            
+            <div data-role="popup" id="popupPhoto" class="ui-content" data-theme="e" data-corners="false">
+                <h5 class="hlabel">Image URI</h5>
+                <p id="pictBox" class="content mesgBox"></p>
+                <a href="#" data-rel="back" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext" class="ui-btn-right">Close</a>
+                <img class="popphoto" id="popImage" src="">
+            </div>
+        </div>
+        <div data-role="footer">
+            <div id="cameraStatus"></div>
+        </div>
+        
+        <script type="text/javascript" charset="utf-8" src="js/camera.js"></script> 
+    </div>
+</body>
 </html>
