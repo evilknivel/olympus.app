@@ -69,7 +69,6 @@
 <gap:plugin name="org.apache.cordova.network-information" version="0.2.7" />
 <gap:plugin name="org.apache.cordova.splashscreen" version="0.2.7" />
 <gap:plugin name="org.apache.cordova.vibration" version="0.3.7" />
-<plugin name="Camera" value="org.apache.cordova.CameraLauncher" />
 
 
 
