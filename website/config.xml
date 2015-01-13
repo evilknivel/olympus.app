@@ -26,6 +26,9 @@
         permission on your app, which PhoneGap requires.
     -->
     <preference name="permissions"                value="CAMERA"/>
+    <access origin="tel:*" launch-external="yes" />
+    <access origin="mailto:*" launch-external="yes" />
+    <uses-permission android:autoLink="phone" />
 
 
     <!-- Customize your app and platform with the preference element. -->
