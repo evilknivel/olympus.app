@@ -11,6 +11,21 @@
       <script src="jquery.mobile-1.4.2.min.js"></script>
       <script type="text/javascript" src="cordova.js"></script>
       <script type="text/javascript" src="barcode.js"></script>
+      <script type="text/javascript">
+      	
+      	$("#bth").click(function () {
+	$("#pth").toggle('slow');
+	});
+      	
+      	$("#bkb").click(function () {
+	$("#pkb").toggle('slow');
+	});
+	
+	$("#blg").click(function () {
+	$("#plg").toggle('slow');
+	});
+	
+      </script>
       
       <style>
         .header_center {  
@@ -92,28 +107,67 @@
 
   <div data-role="navbar" class="navbar" data-iconpos="left">
     <ul>
-      <li><a href="#hotline" data-ajax="false" data-icon="phone">Hotline</a></li>
-      <li><a href="#team" data-ajax="false" data-icon="user">Team</a></li>
+      <li><a href="#teams" data-ajax="false" data-icon="user">Teams</a></li>
+      <li><a href="#gefuehrt" data-ajax="false" data-icon="user"></a></li>
       <li><a href="#kontakt" data-ajax="false" data-icon="mail">Kontakt</a></li>
     </ul>
   </div>
 
 
   
-<div class="ui-body-d ui-content" id="hotline">
-  <h1>Hotline</h1>
-  <p>Technische Hotline: <a href="tel:+49800200444294">0800 200 444 294</a>
+<div class="ui-body-d ui-content" id="teams">
+  <h1>Ihr direkter Kontakt</h1>
+  <p>Technische Hotline: <a class="ui-btn ui-shadow" data-role="button" href="tel:+49800200444294">Tel: 0800 200 444 294</a>
   <br>
-  Kundenbetreung: <a href="tel:+49800200444274">0800 200 444 274</a>
+  Kundenbetreung: <a class="ui-btn ui-shadow" data-role="button" href="tel:+49800200444274">Tel: 0800 200 444 274</a>
   <br>
-  Leihger&auml;te: <a href="tel:+49800200444264">0800 200 444 264</a></p>
+  Leihger&auml;te: <a class="ui-btn ui-shadow" data-role="button" href="tel:+49800200444264">Tel: 0800 200 444 264</a></p>
   <br>
+  <h1>Teams</h1>
+  <br>
+  
+  <div>
+  <h2>Technische Hotline</h2>
+	<p id="pth" style="display:none"> Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam 
+	nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos 
+	et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est 
+	Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy 
+	eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et 
+	accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est 
+	Lorem ipsum dolor sit amet.Technische Hotline: 
+	<a class="ui-btn ui-shadow" data-role="button" href="tel:+49800200444294">Tel: 0800 200 444 294</a></p>
+  	<button id="bth" type="button"></button>
+  </div>
+  <div>
+  <h2>Kundenbetreuung</h2>
+	<p id="pkb" style="display:none"> Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam 
+	nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos 
+	et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est 
+	Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy 
+	eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et 
+	accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est 
+	Lorem ipsum dolor sit amet.Kundenbetreung: 
+	<a class="ui-btn ui-shadow" data-role="button" href="tel:+49800200444274">Tel: 0800 200 444 274</a></p>
+  	<button id="bkb" type="button">mehr</button>
+  </div>
+  <div>
+  <h2>Leihgeräte</h2>
+	<p id="plg" style="display:none"> Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam 
+	nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos 
+	et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est 
+	Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy 
+	eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et 
+	accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est 
+	Lorem ipsum dolor sit amet.Leihger&auml;te: 
+	<a class="ui-btn ui-shadow" data-role="button" href="tel:+49800200444264">Tel: 0800 200 444 264</a></p>
+  	<button id="blg" type="button">mehr</button>
+  </div>
   <a href="camera.html">Kamera test</a>
   <br>
   <a class="ui-btn ui-shadow" href="#repstatus" data-role="button">Reparaturstatus Barcode Test</a>
   </div>
 
-<div class="ui-body-d ui-content" id="team">
+<div class="ui-body-d ui-content" id="gefuehrt">
   <div class="ui-corner-all custom-corners">
 
     <h3>Kundenbetreung</h3>
