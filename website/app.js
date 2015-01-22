@@ -21,7 +21,7 @@ function deviceReady()
 * Catch "mobileinit" event which is fired when a jQueryMobile is loaded.
 * Ensure that we respond to this event only once.
 */
-$(document).one("mobileinit", function(){
+$(document).on("mobileinit", function(){
 	jqmReady.resolve();
 });
 
@@ -33,7 +33,5 @@ $.when(gapReady, jqmReady).then(myAppLogic);
 // App Logic
 function myAppLogic()
 {
-	....
-	....
-	....
+ alert("lauft");
 }
