@@ -22,7 +22,7 @@
         // Cordova is ready
         function onDeviceReady() {
             alert("Cordova ready!");
-          var db = window.sqlitePlugin.openDatabase("leistungskatalog.sqlite", "1.0", "katalog", -1);
+         <!-- var db = window.sqlitePlugin.openDatabase("leistungskatalog.sqlite", "1.0", "katalog", -1);
     
             db.transaction(function(tx) {
             tx.executeSql('SELECT DISTINCT Subcategories FROM katalog');
@@ -31,7 +31,7 @@
               console.log("ERROR: " + e.message);
               alert("ERROR: " + e.message);
             });
-          });
+          }); -->
     }
 </script>
       
