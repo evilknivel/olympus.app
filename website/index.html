@@ -18,19 +18,7 @@
             });
       </script>
       <script src="jquery.mobile-1.4.5.min.js"></script> 
-      <script type="text/javascript" src="cordova.js"></script>
-      <script type="text/javascript">
-            document.addEventListener('deviceready', deviceReady, false);
-            function deviceReady() {
-                dd.resolve();
-            }
-
-            function doInit() {
-                alert('Ready');
-            }
-        </script>
-
-      <script type="text/javascript" src="barcode.js"></script>
+           <script type="text/javascript" src="barcode.js"></script>
 
      
       <style>
@@ -102,6 +90,18 @@
 </head>
 <body>
 
+ <script type="text/javascript" src="cordova.js"></script>
+      <script type="text/javascript">
+            document.addEventListener('deviceready', deviceReady, false);
+            function deviceReady() {
+                dd.resolve();
+            }
+
+            function doInit() {
+                alert('Ready');
+            }
+        </script>
+        
 <div data-role="page" data-theme="a" id="index">
 
   <div data-role="header" class="header_center"> 
