@@ -9,33 +9,23 @@
       <script src="jquery-1.11.2.min.js"></script> 
       <script src="jquery.mobile-1.4.5.min.js"></script> 
       <script type="text/javascript" src="cordova.js"></script>
-      
       <script type="text/javascript">
 
         
         function onLoad() {
         // Wait for Cordova to load
-        console.log("onload");
-        alert("onload");
-        document.addEventListener("deviceready", onDeviceReady, false);
+            console.log("onLoad");
+            alert("onLoad");
+            document.addEventListener("deviceready", onDeviceReady, false);
         }
 
         // Cordova is ready
         function onDeviceReady() {
             console.log("Cordova ready!");
             alert("Cordova ready!");
-         <!-- var db = window.sqlitePlugin.openDatabase("leistungskatalog.sqlite", "1.0", "katalog", -1);
-    
-            db.transaction(function(tx) {
-            tx.executeSql('SELECT DISTINCT Subcategories FROM katalog');
+        }
             
-            }, function(e) {
-              console.log("ERROR: " + e.message);
-              alert("ERROR: " + e.message);
-            });
-          }); -->
-    }
-</script>
+        </script>
       
       <style>
         .header_center {  
@@ -112,7 +102,16 @@
 <h1>SQLite Test</h1>
 <button value="test" onclick="alert('app läuft');">
 </div> 
-
+         var db = window.sqlitePlugin.openDatabase("leistungskatalog.sqlite", "1.0", "katalog", -1);
+    
+            db.transaction(function(tx) {
+            tx.executeSql('SELECT DISTINCT Subcategories FROM katalog');
+            
+            }, function(e) {
+              console.log("ERROR: " + e.message);
+              alert("ERROR: " + e.message);
+            });
+          });
 </body>
  
 </html> 
