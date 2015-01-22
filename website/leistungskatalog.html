@@ -12,12 +12,13 @@
       <script type="text/javascript">
 
         
-        function onLoad() {
+        $(document).on('pagebeforeshow', '#index', function(){ 
+
         // Wait for Cordova to load
             console.log("onLoad");
             alert("onLoad");
             document.addEventListener("deviceready", onDeviceReady, false);
-        }
+        });
 
         // Cordova is ready
         function onDeviceReady() {
@@ -97,7 +98,7 @@
 
     
 </head>
-<body onload="onLoad()">
+<body>
 <div data-role="page" data-theme="a" id="index">
 <h1>SQLite Test</h1>
 <button value="test" onclick="alert('app läuft');">
