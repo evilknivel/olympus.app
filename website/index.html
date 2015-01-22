@@ -8,18 +8,66 @@
       <link rel="stylesheet" href="themes/jquery.mobile.icons.min.css" /> 
       <link rel="stylesheet" href="jquery.mobile.structure-1.4.5.min.css" /> 
       <script src="jquery-1.11.2.min.js"></script> 
-      <script type="text/javascript">
-            var dd = $.Deferred();
-            var jqd = $.Deferred();
-            $.when(dd, jqd).done(doInit);
-
-            $(document).bind('mobileinit', function () {
-                jqd.resolve();
-            });
-      </script>
       <script src="jquery.mobile-1.4.5.min.js"></script> 
-           <script type="text/javascript" src="barcode.js"></script>
+      <script type="text/javascript" src="cordova.js"></script>
+      <script type="text/javascript" src="barcode.js"></script>
+	<script>/**
+ * @author: Chris Hjorth, www.chrishjorth.com
+ */
+var jqmReady = $.Deferred();
+var pgReady = $.Deferred();
 
+var app = {
+   //Callback for when the app is ready
+   callback: null,
+   //Flag for separating web and PhoneGap environments
+   isWeb: true,
+   // Application Constructor
+   initialize: function(callback) {
+      this.callback = callback;
+      //This session storage key-value can be set in a web page to separate environments  
+      if(!sessionStorage.getItem("isWeb")) {
+         console.log("Is not web.");
+         this.isWeb = false;
+         this.bindEvents();
+      }
+      else {
+         console.log("Is web.");
+         //In case of web we ignore PG but resolve the Deferred Object to trigger initialization
+         pgReady.resolve();
+      }
+   },
+   bindEvents: function() {
+      document.addEventListener('deviceready', this.onDeviceReady, false);
+   },
+   onDeviceReady: function() {
+      // The scope of 'this' is the event, hence we need to use app.
+      app.receivedEvent('deviceready');
+   },
+   receivedEvent: function(event) {
+      switch(event) {
+         case 'deviceready':
+	    pgReady.resolve();
+	    break;
+      }
+   }
+};
+
+$(document).on("pageinit", function(event, ui) {
+   jqmReady.resolve();
+});
+
+/**
+ * General initialization.
+ */
+$.when(jqmReady, pgReady).then(function() {
+   //Initialization code here
+   if(app.callback) {
+      app.callback();
+   }
+   console.log("Frameworks ready.");
+});
+</script>
      
       <style>
         .header_center {  
@@ -90,17 +138,8 @@
 </head>
 <body>
 
- <script type="text/javascript" src="cordova.js"></script>
-      <script type="text/javascript">
-            document.addEventListener('deviceready', deviceReady, false);
-            function deviceReady() {
-                dd.resolve();
-            }
 
-            function doInit() {
-                alert('Ready');
-            }
-        </script>
+
         
 <div data-role="page" data-theme="a" id="index">
 
