@@ -13,12 +13,12 @@
       <script type="text/javascript" src="barcode.js"></script>
 	
       <script>
-      //add listener when device ready
-    document.addEventListener("deviceready", onDeviceReady, false);
-    var db = window.openDatabase("Dummy_DB", "1.0", "Just a Dummy DB", 200000); //will create database Dummy_DB or open it
+
+    
  
     //function will be called when device ready
-    function onDeviceReady(){
+    function run(){
+		var db = window.openDatabase("Dummy_DB", "1.0", "Just a Dummy DB", 200000); //will create database Dummy_DB or open it
         db.transaction(populateDB, errorCB, successCB);
     }
  
@@ -221,7 +221,7 @@
   <br>
   <a class="ui-btn ui-shadow" data-role="button" href="camera.html">Camera</a>
   <br>
-  <a class="ui-btn ui-shadow" data-role="button" href="#leistung">leistungskatalog</a>
+  <a class="ui-btn ui-shadow" data-role="button" href="#leistung" onclick="run()">leistungskatalog</a>
   <br>
   <a class="ui-btn ui-shadow" href="#repstatus" data-role="button">Reparaturstatus Barcode Test</a>
   </div>
