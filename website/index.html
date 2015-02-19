@@ -11,64 +11,51 @@
       <script src="jquery.mobile-1.4.5.min.js"></script> 
       <script type="text/javascript" src="cordova.js"></script>
       <script type="text/javascript" src="barcode.js"></script>
-	<script>/**
- * @author: Chris Hjorth, www.chrishjorth.com
- */
-var jqmReady = $.Deferred();
-var pgReady = $.Deferred();
+	
+      <script>
+      //add listener when device ready
+    document.addEventListener("deviceready", onDeviceReady, false);
+    var db = window.openDatabase("Dummy_DB", "1.0", "Just a Dummy DB", 200000); //will create database Dummy_DB or open it
+ 
+    //function will be called when device ready
+    function onDeviceReady(){
+        db.transaction(populateDB, errorCB, successCB);
+    }
+ 
+    //create table and insert some record
+    function populateDB(tx) {
+        tx.executeSql('CREATE TABLE IF NOT EXISTS SoccerPlayer (id INTEGER PRIMARY KEY AUTOINCREMENT, Name TEXT NOT NULL, Club TEXT NOT NULL)');
+        tx.executeSql('INSERT INTO SoccerPlayer(Name,Club) VALUES ("Alexandre Pato", "AC Milan")');
+        tx.executeSql('INSERT INTO SoccerPlayer(Name,Club) VALUES ("Van Persie", "Arsenal")');
+    }
+ 
+    //function will be called when an error occurred
+    function errorCB(err) {
+        alert("Error processing SQL: "+err.code);
+    }
+ 
+    //function will be called when process succeed
+    function successCB() {
+        alert("success!");
+        db.transaction(queryDB,errorCB);
+    }
+ 
+    //select all from SoccerPlayer
+    function queryDB(tx){
+        tx.executeSql('SELECT * FROM SoccerPlayer',[],querySuccess,errorCB);
+    }
+ 
+    function querySuccess(tx,result){
+        $('#SoccerPlayerList').empty();
+        $.each(result.rows,function(index){
+            var row = result.rows.item(index);
+            $('#SoccerPlayerList').append('<li><a href="#"><h3 class="ui-li-heading">'+row['Name']+'</h3><p class="ui-li-desc">Club '+row['Club']+'</p></a></li>');
+        });
+ 
+        $('#SoccerPlayerList').listview();
+    }
 
-var app = {
-   //Callback for when the app is ready
-   callback: null,
-   //Flag for separating web and PhoneGap environments
-   isWeb: true,
-   // Application Constructor
-   initialize: function(callback) {
-      this.callback = callback;
-      //This session storage key-value can be set in a web page to separate environments  
-      if(!sessionStorage.getItem("isWeb")) {
-         console.log("Is not web.");
-         this.isWeb = false;
-         this.bindEvents();
-      }
-      else {
-         console.log("Is web.");
-         //In case of web we ignore PG but resolve the Deferred Object to trigger initialization
-         pgReady.resolve();
-      }
-   },
-   bindEvents: function() {
-      document.addEventListener('deviceready', this.onDeviceReady, false);
-   },
-   onDeviceReady: function() {
-      // The scope of 'this' is the event, hence we need to use app.
-      app.receivedEvent('deviceready');
-   },
-   receivedEvent: function(event) {
-      switch(event) {
-         case 'deviceready':
-	    pgReady.resolve();
-	    break;
-      }
-   }
-};
-
-$(document).on("pageinit", function(event, ui) {
-   jqmReady.resolve();
-});
-
-/**
- * General initialization.
- */
-$.when(jqmReady, pgReady).then(function() {
-   //Initialization code here
-   if(app.callback) {
-      app.callback();
-   }
-   console.log("Frameworks ready.");
-   alert("Frameworks ready.");
-});
-</script>
+      </script>
      
       <style>
         .header_center {  
@@ -786,36 +773,17 @@ $.when(jqmReady, pgReady).then(function() {
 	</div>
 
 </div>
+</div>
 <!--/////////////////////PAGE_BREAK///////////////////////////////////////////////////////////////////////// -->
 <div data-role="page" data-theme="b" id="leistung">  
 
 <div data-role="header" class="header_center" data-add-back-btn="true" data-position="fixed">
   <h1>Leistungskatalog</h1>
-</div> 
-
-<div data-role="content">
-  
-
-<ul>
-    <li>
-        <select class="dropdown" name="fruits">
-            <option value="Bananas">Bananas</option>
-            <option value="Oranges">Oranges</option>
-            <option value="Apples">Apples</option>
-            <option value="Pears">Pears</option>
-        </select>
-    </li>
-    <li>
-        <select class="dropdown" name="cities">
-            <option value="Arizona">Arizona</option>
-            <option value="California">California</option>
-            <option value="Colorado">Colorado</option>
-            <option value="Conneticut">Conneticut</option>
-        </select>
-    </li>
-</ul>
 </div>
-
+<div data-role="content">
+     <ul id="SoccerPlayerList">
+    </ul>
+</div>
 </div>
 <!--/////////////////////PAGE_BREAK///////////////////////////////////////////////////////////////////////// -->
   </body>
