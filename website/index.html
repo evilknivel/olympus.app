@@ -14,13 +14,12 @@
 	
       <script>
 
-    
- 
-    //function will be called when device ready
-    function run(){
-		var db = window.openDatabase("Dummy_DB", "1.0", "Just a Dummy DB", 200000); //will create database Dummy_DB or open it
+    $( document ).on( "mobileinit", function() {
+
+	var db = window.openDatabase("Dummy_DB", "1.0", "Just a Dummy DB", 200000); //will create database Dummy_DB or open it
         db.transaction(populateDB, errorCB, successCB);
-    }
+        
+    });
  
     //create table and insert some record
     function populateDB(tx) {
