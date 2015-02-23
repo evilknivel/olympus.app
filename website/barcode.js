@@ -6,6 +6,16 @@ function init() {
 	document.querySelector("#startScan").addEventListener("touchend", startScan, false);
 	resultDiv = document.querySelector("#results");
 	var db = window.sqlitePlugin.openDatabase({name: "leistungskatalog.sqlite"});
+
+
+      db.transaction(function(tx) {
+        tx.executeSql('DROP TABLE IF EXISTS test_table');
+      
+
+    }, function(e) {
+      console.log("ERROR: " + e.message);
+    });
+  
 }
 
 
