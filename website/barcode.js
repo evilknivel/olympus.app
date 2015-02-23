@@ -9,7 +9,7 @@ function init() {
 
 
       db.transaction(function(tx) {
-        tx.executeSql('DROP TABLE IF EXISTS test_table');
+        tx.executeSql('SELECT * FROM test_table');
       
 
     }, function(e) {
