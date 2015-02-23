@@ -13,9 +13,7 @@ function startScan() {
 
 	cordova.plugins.barcodeScanner.scan(
 		function (result) {
-			var s = "Result: " + result.text + "<br/>" +
-			"Format: " + result.format + "<br/>" +
-			"Cancelled: " + result.cancelled;
+			var s = "<h3>Result: " + result.text + "</h3>";
 			resultDiv.innerHTML = s;
 		}, 
 		function (error) {
