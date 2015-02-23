@@ -9,7 +9,7 @@ function init() {
 
 
       db.transaction(function(tx) {
-        tx.executeSql('SELECT * FROM test_table');
+        tx.executeSql('SELECT * FROM katalog LIMIT 20');
       
 
     }, function(e) {
