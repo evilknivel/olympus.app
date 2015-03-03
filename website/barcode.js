@@ -13,7 +13,7 @@ function init() {
       
 
     }, function(e) {
-      console.log("ERROR: " + e.message);
+      alert("ERROR: " + e.message);
     });
   
 }
