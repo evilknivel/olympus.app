@@ -74,6 +74,7 @@
 <gap:plugin name="org.apache.cordova.splashscreen" version="0.3.4" />
 <gap:plugin name="org.apache.cordova.vibration" version="0.3.11" />
 <gap:plugin name="com.brodysoft.sqliteplugin" version="1.0.0" />
+<gap:plugin name="me.rahul.plugins.sqldb" version="1.0.0" />
 
 
 
