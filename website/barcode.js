@@ -5,7 +5,7 @@ document.addEventListener("deviceready", init, false);
 function init() {
 	document.querySelector("#startScan").addEventListener("touchend", startScan, false);
 	resultDiv = document.querySelector("#results");
-	var db = window.sqlitePlugin.openDatabase({name: "leistungskatalog.sqlite"});
+	var db = window.sqlitePlugin.openDatabase({name: "leistungskatalog.sqlite", createFromLocation: 1});
 
 
       db.transaction(function(tx) {
