@@ -28,7 +28,9 @@ function copysuccess() {
 function copyerror(e)
 {
         //db already exists or problem in copying the db file. Check the Log.
-        console.log("Error Code = "+JSON.stringify(e));
+        alert("Error Code = " + e.code);
+        alert("Error Code = " + e.message);
+        alert("Error Code = " + e);
         //e.code = 516 => if db exists
 }
 
