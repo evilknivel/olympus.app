@@ -6,10 +6,10 @@ function init() {
 	document.querySelector("#startScan").addEventListener("touchend", startScan, false);
 	resultDiv = document.querySelector("#results");
 	
-	window.plugins.sqlDB.copy("leistungskatalog.sqlite",copysuccess,copyerror);
+	//window.plugins.sqlDB.copy("leistungskatalog.sqlite",copysuccess,copyerror);
 	
 }
-
+<!--
 function copysuccess() {
 	
 	var db = window.sqlitePlugin.openDatabase({name: "leistungskatalog.sqlite", createFromLocation: 1});
@@ -24,7 +24,7 @@ function copysuccess() {
     });
   
 }
-
+-->
 function copyerror(e)
 {
         //db already exists or problem in copying the db file. Check the Log.
