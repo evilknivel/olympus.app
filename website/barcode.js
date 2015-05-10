@@ -24,7 +24,7 @@ function copysuccess() {
     });
   
 }
--->
+
 function copyerror(e)
 {
         //db already exists or problem in copying the db file. Check the Log.
@@ -49,3 +49,4 @@ function startScan() {
 
 
 }
+-->
