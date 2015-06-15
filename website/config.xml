@@ -28,6 +28,8 @@
     <access origin="mailto:*" launch-external="yes" />
     <!--<uses-permission android:autoLink="phone" />-->
     
+    <access origin="*" />
+    
 <feature name="http://api.phonegap.com/1.0/network" />
 <feature name="http://api.phonegap.com/1.0/camera" />
 <feature name="http://api.phonegap.com/1.0/notification" />
