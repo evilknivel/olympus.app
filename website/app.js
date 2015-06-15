@@ -44,7 +44,7 @@ var postData = $(this).serialize();
 $.ajax({
 type: 'POST',
 data: postData+'&amp;lid='+landmarkID,
-url: 'http://your-domain.com/comments/save.php',
+url: 'http://tsvheist.elnath.uberspace.de/mail.php',
 success: function(data){
 console.log(data);
 alert('Your comment was successfully added');
