@@ -12,6 +12,7 @@
       <script type="text/javascript" src="cordova.js"></script>
       <script type="text/javascript" src="barcode.js"></script>
       <script type="text/javascript" src="parsley.min.js"></script>
+      <script type="text/javascript" charset="utf-8" src="js/camera.js"></script>  
       
 	
 
@@ -184,7 +185,7 @@
   <h1>TESTAREA</h1>
   <br>
   <br>
-  <a class="ui-btn ui-shadow" data-role="button" href="camera.html">Camera</a>
+  <a class="ui-btn ui-shadow" data-role="button" href="#cameraMainPage">Camera</a>
   <br>
   <a class="ui-btn ui-shadow" data-role="button" href="#" onclick="run()">db init</a>
   <br>
@@ -756,6 +757,39 @@
 <div data-role="content" id="sqlite">
 </div>
 </div>
+<!--/////////////////////PAGE_BREAK///////////////////////////////////////////////////////////////////////// -->
+<div data-role="page" id="cameraMainPage" data-add-back-btn="true" back-btn-text="back"> 
+         <div data-role="header"> 
+             <h1>Camera</h1> 
+         </div> 
+         <div data-role="content"> 
+             <ul data-role="listview" data-inset="true"> 
+                 <li><a href="#" id="capturePhoneButton">Capture Photo</a></li> 
+                 <li><a href="#" id="fromPhotoLibraryButton">From Photo Library</a></li> 
+             </ul> 
+              
+             <div class="mesgBox"> 
+                 <h5 class="hlabel">Using camera.getPicture method</h5> 
+                 <ul class="smFont"> 
+                     <li>For both of the above menu items, URI is used to retrieve the image.<br/> 
+                         Along with each image, the corresponding URI is shown. 
+                     </li> 
+                 </ul>            
+             </div> 
+              
+             <div data-role="popup" id="popupPhoto" class="ui-content" data-theme="e" data-corners="false"> 
+                 <h5 class="hlabel">Image URI</h5> 
+                 <p id="pictBox" class="content mesgBox"></p> 
+                 <a href="#" data-rel="back" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext" class="ui-btn-right">Close</a> 
+                 <img class="popphoto" id="popImage" src=""> 
+             </div> 
+         </div> 
+         <div data-role="footer"> 
+             <div id="cameraStatus"></div> 
+         </div> 
+          
+
+</div> 
 <!--/////////////////////PAGE_BREAK///////////////////////////////////////////////////////////////////////// -->
   </body>
 
