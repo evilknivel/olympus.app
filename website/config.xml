@@ -64,7 +64,7 @@
 
 
     <!-- Core plugins -->
-<gap:plugin name="nl.x-services.plugins.launchmyapp" version="3.0">
+<gap:plugin name="nl.x-services.plugins.launchmyapp" version="3.2.0">
 <param name="URL_SCHEME" value=" myapp://" />
 </gap:plugin>
 <gap:plugin name="com.phonegap.plugins.barcodescanner" version="2.2.0" />
