@@ -54,7 +54,7 @@
 
 
     <!-- Core plugins -->
-<gap:plugin name="com.phonegap.plugins.barcodescanner" version="2.0.0" />
+<gap:plugin name="com.phonegap.plugins.barcodescanner" version="2.2.0" />
 <gap:plugin name="org.apache.cordova.battery-status" version="0.2.11" />
 <gap:plugin name="org.apache.cordova.camera" version="0.3.2" />
 <gap:plugin name="com.teamnemitoff.phonedialer" version="0.3.0" />
@@ -73,7 +73,7 @@
 <gap:plugin name="org.apache.cordova.network-information" version="0.2.12" />
 <gap:plugin name="org.apache.cordova.splashscreen" version="0.3.4" />
 <gap:plugin name="org.apache.cordova.vibration" version="0.3.11" />
-<gap:plugin name="com.brodysoft.sqliteplugin" version="1.0.0" />
+<gap:plugin name="com.brodysoft.sqliteplugin" version="1.0.6" />
 <gap:plugin name="me.rahul.plugins.sqldb" version="1.0.0" />
 
 
